@@ -13,7 +13,7 @@ const Stock = (props) => {
         <h3>{props.e_fname}</h3>
       </div>
 
-      <div className={classes.sum}>
+      <div className={`${classes.sum} ${classes.desktop_text} ${classes.tablet_text} ${classes.phone_text}`}>
         <p>{props.e_sum}</p>
       </div>
       <div className={classes.url_label} >

@@ -4,7 +4,7 @@
   gap: 10px;
   padding: 10px;
 
-  margin: 1rem;
+  margin: calc(0.5em + 1vmin);
 
   background-color: #230052;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -15,7 +15,10 @@
 
 .stock > div {
   
-  font-size: 1rem;
+  font-size: calc(0.5em + 1vmin);;
+}
+p{
+  overflow: hidden;
 }
 
 .title {
@@ -34,7 +37,7 @@
 }
 .sum {
   grid-area: summary;
-  text-align: justify;
+  
   color: #eccf77;
 
   font-size: 1rem;
@@ -45,34 +48,34 @@
 
   color: white;
   margin: 0;
-  font-size: 1rem;
+
 }
 .url {
   grid-area: url;
   min-width: none;
   color: #eccf77;
   margin: 0;
-  font-size: 1rem;
+
 }
 .url a {
   color:#eccf77
 }
 a:visited {
-  color: #a567f7;
+  color: #9b62e6;
 }
 .mkt_label {
   grid-area: mkt_l;
 
   color: white;
   margin: 0;
-  font-size: 1rem;
+
 }
 .mktcap {
   grid-area: mktcap;
 
   color: #eccf77;
   margin: 0;
-  font-size: 1rem;
+
 }
 @media screen and (min-width: 0px) {
   /* For tablet: */
@@ -84,6 +87,9 @@ a:visited {
       "url_l url_l  mkt_l mkt_l"
       " url url   mktcap mktcap";
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .phone_text{
+    text-align:center;
   }
 
 }
@@ -97,6 +103,9 @@ a:visited {
       "stock-name url    mktcap";
     grid-template-columns: 1fr 1fr 1fr;
   }
+  .tablet_text{
+    text-align:justify;
+  }
 
 }
 
@@ -109,6 +118,8 @@ a:visited {
       "stock-name url_l url mkt_l mktcap";
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   }
-
+  .desktop_text{
+    text-align:justify;
+  }
  
 }
