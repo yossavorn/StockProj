@@ -1,14 +1,14 @@
 import React from "react";
 
-import MoviesList from "./components/MoviesList";
+import StocksList from "./components/StocksList";
 import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [moviesRender, setMoviesRender] = useState([]);
+  const [StocksRender, setStocksRender] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(null);
-  const fetchMovieHandler = async () => {
+  const fetchStockHandler = async () => {
     setIsLoading(true);
     setIsError(null);
     try {
@@ -20,15 +20,20 @@ function App() {
       const data = await parseData.json();
       console.log(data);
 
-      const moviesData = data.map((movie) => {
+      const StocksData = data.map((stock) => {
         return {
-          id: movie.N_name,
-          title: movie.N_name,
-          openingText:  movie.N_COMPANY_E,
-          releaseDate: movie.N_BUSINESS_TYPE_T,
+          id: stock.N_name,
+          title: stock.N_name,
+          e_fname:  stock.N_COMPANY_E,
+          e_summary: stock.N_BUSINESS_TYPE_E,
+          t_fname:  stock.N_COMPANY_T,
+          t_summary: stock.N_BUSINESS_TYPE_T,
+          url: stock.N_URL,
+          mktcap: stock.marketcap
         };
       });
-      setMoviesRender(moviesData);
+      setStocksRender(StocksData);
+      console.log(StocksData);
     } catch (error) {
       setIsError(error.message);
     }
@@ -39,13 +44,13 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <button onClick={fetchMovieHandler}>Fetch Stocks</button>
+        <button onClick={fetchStockHandler}>Fetch Stocks</button>
       </section>
       <section>
-        {!isLoading && moviesRender.length > 0 && (
-          <MoviesList movies={moviesRender} />
+        {!isLoading && StocksRender.length > 0 && (
+          <StocksList stocks={StocksRender} />
         )}
-        {!isLoading && moviesRender.length === 0 && !isError && <p>No Movie</p>}
+        {!isLoading && StocksRender.length === 0 && !isError && <p>No Stocks</p>}
         {!isLoading && isError && <p>{isError}</p>}
         {isLoading && <p>Now Loading .....</p>}
       </section>

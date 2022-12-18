@@ -1,0 +1,114 @@
+.stock {
+  display: grid;
+
+  gap: 10px;
+  padding: 10px;
+
+  margin: 1rem;
+
+  background-color: #230052;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.stock > div {
+  
+  font-size: 1rem;
+}
+
+.title {
+  grid-area: stock-name;
+  font-size: 2rem;
+  color: #f7e702;
+  margin: auto 1rem;
+}
+
+.fname {
+  grid-area: stock-fname;
+
+  color: #eccf77;
+
+  font-size: 1rem;
+}
+.sum {
+  grid-area: summary;
+  text-align: justify;
+  color: #eccf77;
+
+  font-size: 1rem;
+}
+
+.url_label {
+  grid-area: url_l;
+
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+.url {
+  grid-area: url;
+  min-width: none;
+  color: #eccf77;
+  margin: 0;
+  font-size: 1rem;
+}
+.url a {
+  color:#eccf77
+}
+a:visited {
+  color: #a567f7;
+}
+.mkt_label {
+  grid-area: mkt_l;
+
+  color: white;
+  margin: 0;
+  font-size: 1rem;
+}
+.mktcap {
+  grid-area: mktcap;
+
+  color: #eccf77;
+  margin: 0;
+  font-size: 1rem;
+}
+@media screen and (min-width: 0px) {
+  /* For tablet: */
+  .phone_grid {
+    grid-template-areas:
+      "stock-name stock-name stock-name stock-name"
+      "stock-fname stock-fname stock-fname stock-fname"
+      "summary summary summary summary "
+      "url_l url_l  mkt_l mkt_l"
+      " url url   mktcap mktcap";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+}
+@media screen and (min-width: 600px) {
+  /* For tablet: */
+  .tablet_grid {
+    grid-template-areas:
+      "stock-name stock-fname stock-fname"
+      "stock-name summary summary"
+      "stock-name url_l  mkt_l"
+      "stock-name url    mktcap";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  /* For desktop: */
+  .desktop_grid {
+    grid-template-areas:
+      "stock-name stock-fname stock-fname stock-fname stock-fname"
+      "stock-name summary summary summary summary"
+      "stock-name url_l url mkt_l mktcap";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+ 
+}
