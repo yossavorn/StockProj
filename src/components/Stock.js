@@ -17,7 +17,7 @@ const Stock = (props) => {
         <p>{props.e_sum}</p>
       </div>
       <div className={classes.url_label} >
-        <p>Web-Site Link</p>
+        <p>Company website</p>
       </div>
       <div className={classes.url}>
         <p>{props.url ? <a href={props.url} target="_blank">{props.url}</a> : "-"}</p>
